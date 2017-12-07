@@ -45,7 +45,7 @@ exports.handler = (event, context, callback) => {
              Body: data.AudioStream,
              Bucket: bucket,
              Key: key,
-             Content-Type: 'audio/mpeg',
+             ContentType: 'audio/mpeg',
              ACL: 'public-read'
          }, function(err, data) {
              if (err) {
@@ -59,4 +59,5 @@ exports.handler = (event, context, callback) => {
          })
      })
 };
+
 
