@@ -1,0 +1,27 @@
+{
+  "name": "polly-s3-lambda",
+  "version": "1.0.0",
+  "description": "Lambda function to do text-to-speech with Polly, save it in S3 and make it downloadable",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/elisebot/polly-s3-lambda.git"
+  },
+  "keywords": [
+    "polly",
+    "s3",
+    "lambda",
+    "voice",
+    "tts",
+    "text-to-speech"
+  ],
+  "author": "Elisebot",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/elisebot/polly-s3-lambda/issues"
+  },
+  "homepage": "https://github.com/elisebot/polly-s3-lambda#readme"
+}
