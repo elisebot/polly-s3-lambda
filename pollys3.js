@@ -21,6 +21,10 @@ function random128Hex() {
 
 exports.handler = (event, context, callback) => {
     let query = event.queryStringParameters.q;
+    if (event.body) {
+        query = JSON.parse(event.body).text || query;
+    }
+    
     console.log("Starting text-to-speech for text", event.queryStringParameters.q);
 
     let polly = new AWS.Polly();
@@ -28,7 +32,7 @@ exports.handler = (event, context, callback) => {
       OutputFormat: "mp3",
       SampleRate: "8000",
       Text: query,
-      TextType: "text",
+      TextType: "ssml",
       VoiceId: event.queryStringParameters.lang == 'nl' ? 'Lotte' : 'Joanna'
      }, function(err, data) {
          if (err) {
@@ -59,5 +63,4 @@ exports.handler = (event, context, callback) => {
          })
      })
 };
-
 
