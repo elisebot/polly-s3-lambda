@@ -42,7 +42,8 @@ exports.handler = (event, context, callback) => {
 
          console.log("Got data from polly", data.AudioStream.length);
          let s3 = new AWS.S3();
-         let bucket = process.env.POLLY_S3_BUCKET || 'elisebot-dev'
+         let bucket = process.env.POLLY_S3_BUCKET
+               
          let key = 'polly' + random128Hex() + ".mp3";
 
          s3.putObject({
